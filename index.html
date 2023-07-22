@@ -1,0 +1,230 @@
+<! Doctype html>
+<head>
+<title>Form validation </title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+
+
+
+<img src="linkedin.jpeg">
+
+<div class="box">
+	<div class="head">
+		<h2>Sign up</h2>
+		<p>stay updated on your personal world</p>
+	</div>
+		<p class="error-msg1">Invalid id<br> Invalid password</p>
+		<form >
+		
+			<div class="box1">
+				<input type="email" id="user_email"  placeholder="Email or phone" class="form-control"><br><br>
+				<p class="error-msg">Please Enter your Email..!</p>
+			</div>
+			
+			<div class="box1">
+				<div class="show">
+					<input type="password" id="pwd" placeholder="Enter your password" class="form-control"><br><br>
+					<b>Show</b>
+					<p class="error-msg">Please Enter your password..!</p>
+				</div>
+			</div>
+				
+				<!-- <input class="box1" type="password" placeholder="Enter your password" class="form-control">
+				<p class="error-msg">Confirm your password..!</p> -->
+				<p>Forget password?</p>
+				<button class="in" onclick="signup()" type="submit">sign in</button>
+			<div class="open">
+				<div class="empty"></div>
+				<span class="or">or</span>
+			</div>
+				<button class="new" type="submit" >New to Linkedin? join</button>
+		</form>
+
+</div>
+
+
+
+
+<script>
+	
+	let inputs=document.getElementsByClassName("form-control");
+	let user_email=document.getElementById("user_email");
+	let pass=document.getElementById("pwd");
+	let error = document.getElementsByClassName("error-msg");
+	let invalid = document.getElementsByClassName("error-msg1");
+	 let isValid=0;
+	
+	
+	function signup(){
+	
+		let isValid=0;
+	
+		for(let i=0;i < inputs.length;i++){
+			event.preventDefault()
+			if(inputs[i].value === ""){
+			
+ 		//		alert("Enter valid id or password"); //
+
+				inputs[i].parentNode.getElementsByTagName("p")[0].classList.add("invalid-input");
+				isValid++;
+			}else{
+				inputs[i].parentNode.getElementsByTagName("p")[0].classList.remove("invalid-input");			
+			}
+			
+			
+	let login=[
+	{
+		Name:'Hari',
+		email:'harikishorebala@gmail.com',
+		password:'123'
+	},
+	{
+		Name:'Kishore',
+		email:'harikishore@gmail.com',
+		password:'Aadvik'
+	}
+];	
+	
+	
+	if(isValid === 0){
+	let check=login.find(function(item){
+		return item.email === user_email.value;
+		});
+		
+		
+		if (check && check.password === pass.value){
+			return log(event);
+		}else{
+		//alert("login failed")//
+		}
+	
+	
+	}
+	
+	
+	 if(isValid===0){	
+		if(user_email.value === login.email ){
+				invalid[0].classList.remove("error2");	
+		}else{
+			invalid[0].classList.add("error2");
+}
+	if(pass.value === login.password){
+		invalid[0].classList.remove("error2");	
+	
+}
+		else{
+		invalid[0].classList.add("error2");
+}
+}
+
+}
+
+
+
+//login function
+let getUrl = window.location.href;
+	console.log(getUrl);
+if(getUrl.includes("index.html")){
+	let isLogin = localStorage.getItem("isLogin");
+	if(!isLogin){
+		window.location.replace("index.html");
+	}
+ }
+
+//login function
+function log (event){
+	event.preventDefault();
+	localStorage.setItem("isLogin",true);
+	window.location.replace("main.html");
+}
+
+function out (event1){
+	event1.preventDefault();
+	localStorage.remove("isLogin")
+	window.location.reolace("main.html");
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>	
+
+	
+	
+
+	
+
+	
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+<!-- <div class="box">
+<form onsubmit="">
+	<div class="head">
+		<h2>Sign in</h2>
+		<p>stay updated on your personal world</p>
+	</div>
+	<div class="box1">
+		<input type="email" placeholder="Email or phone" class="form-control">
+		<p class="error-msg">Please Enter your Email..!</p>
+	</div>
+	<div class="box1">
+		<input type="password" placeholder="Enter your password" class="form-control">
+		<p class="error-msg">Please Enter your password..!</p>
+	</div> -->
+	<!-- 	<div class="box1">
+		<input type="password" placeholder="Enter your password" class="form-control">
+		<p class="error-msg">Confirm your password..!</p>
+	</div> -->
+<!-- 		<p>Forget password</p>
+		<button class="in" type="submit" >Sign up</button>
+	<div class="open">
+		<div class="empty"></div>
+			<span>or</span>
+	</div>
+		<button class="new" type="submit">New to Linkedin? join</button>
+</form>
+
+</div>
+ -->
+
+
+
+
+
+</body>
+</html>

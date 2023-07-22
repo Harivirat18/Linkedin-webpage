@@ -1,0 +1,99 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:georgian;
+}
+img{
+	padding:10px 40px;
+}
+/* .head p{
+	padding:15px 0px;
+} */
+.head h2{
+	margin-bottom:15px;
+}
+p{
+	color:gray;
+	padding-bottom:15px; 
+}
+.box{
+/* 	border:2px solid black;
+	width:450px;
+	margin:0 auto; */
+	width:300px;
+	padding:17px 15px;
+	border-radius:5px;
+	margin:100px auto;
+	box-shadow:0px 0px 6px lightgray;
+}
+.box1 input{
+    padding: 8px 0px 8px 10px;
+	border-radius:5px;
+	border-color:#8080809e;
+	width:100%;	
+}
+.show{
+	position:relative;
+}
+.show b{
+	position:absolute;
+	top:8px;
+	right:10px;
+	color:blue;
+	cursor:pointer;
+}
+/* .form-control{
+	width:100%;
+	border-radius:5px;
+	height:40%;
+	padding:10px;
+	border:1px black;
+} */
+
+.in{
+	width:100%;
+	cursor:pointer;
+	padding:10px;
+	background-color:blue;
+	color:white;
+	border-radius:20px;
+	border:none;
+}
+.new{
+	width:100%;
+	padding:10px;
+	color:gray;
+	border-radius:20px;
+	background-color:white;
+}
+.empty{
+	height:1px;
+	background-color:black;
+}
+.open{
+	padding:15px;
+	position:relative;
+}
+.or{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	padding:0px 10px;
+	background-color:white;
+}
+ .invalid-input{
+	display:block !important;
+} 
+.error-msg{
+	display:none;
+	color:red;
+}
+.error-msg1{
+	display:none;
+}
+.error2{
+	color:red;
+	display:block !important;
+}
